@@ -54,3 +54,22 @@ bash render_frames.sh results.txt
 The generated images are saved in the `frames_output/` directory as `eta00_contrast.png` through `eta64_contrast.png`.
 
 **Visualization note:** Colors represent water elevation changes relative to the background depth of 0.1. The color scale is clipped to [-0.15, 0.25] to highlight wave propagation. Values outside this range are saturated.
+
+### Generate Animation
+
+Requirements: FFmpeg with H.264 encoding support.
+
+After generating the PNG frames, run:
+
+```bash
+bash make_video.sh
+```
+
+The script generates `FikFlow_001_animation.mp4` with:
+
+- Resolution: 800 × 800 pixels
+- Duration: approximately 5.42 seconds
+- Output frame rate: 24 fps (12 unique simulation frames per second)
+- Video codec: H.264
+
+This is the square scientific animation. The Instagram Reels version uses additional formatting and branding.
