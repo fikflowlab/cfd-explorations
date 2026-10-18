@@ -40,3 +40,17 @@ Expected output: `65`
 The simulation data are written to `results.txt`.
 Additional post-processing is required to generate
 PNG frames and an MP4 animation.
+
+### Visualization
+
+Requirements: Gnuplot with PNG support and AWK.
+
+Generate 65 PNG frames from the simulation output:
+
+```bash
+bash render_frames.sh results.txt
+```
+
+The generated images are saved in the `frames_output/` directory as `eta00_contrast.png` through `eta64_contrast.png`.
+
+**Visualization note:** Colors represent water elevation changes relative to the background depth of 0.1. The color scale is clipped to [-0.15, 0.25] to highlight wave propagation. Values outside this range are saturated.
